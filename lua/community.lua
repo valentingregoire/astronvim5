@@ -10,4 +10,9 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
+  { import = "astrocommunity.diagnostics.tiny-inline-diagnostic-nvim" },
+  { import = "astrocommunity.diagnostics.trouble-nvim" },
+
+  -- completion
+  { import = "astrocommunity.completion.cmp-spell" },
 }
