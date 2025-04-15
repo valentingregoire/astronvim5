@@ -6,6 +6,9 @@
 return {
   "AstroNvim/astrocommunity",
 
+  -- ui
+  { import = "astrocommunity.scrolling.nvim-scrollbar" },
+
   -- language packs
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.markdown" },

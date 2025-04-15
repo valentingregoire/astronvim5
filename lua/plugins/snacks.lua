@@ -6,5 +6,10 @@ return {
   ---@type snacks.Config
   opts = {
     dashboard = dashboard,
+    input = { enabled = true },
+    notifier = {
+      -- style = "minimal",
+      -- padding = false,
+    },
   },
 }

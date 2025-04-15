@@ -49,6 +49,38 @@ return {
         action = function() vim.ui.open "https://github.com/notifications" end,
       },
       {
+        icon = " ",
+        title = { "Window test", hl = "SnacksDashboardDesc" },
+        key = "P",
+        action = function()
+          -- Snacks.win {
+          --   section = "terminal",
+          --   cmd = "ls - la",
+          --   width = 0.4,
+          --   title = "First command",
+          --   -- border = "none",
+          --   -- text = function() return "hallo" end,
+          --   -- content = { "line 1", "line2", "line3" },
+          --   -- text = function() return vim.inspect(vim.w) end,
+          --   -- text = function() return vim.w end,
+          --   -- text = function() return vim.print(vim.inspect(vim.w)) end,
+          --   -- text = function() return vim.fn.systemlist "gh notify -sn 3" end,
+          -- }
+          Snacks.win {
+            -- Snacks.dashboard.text { "👋 Welcome, Valentin!", hl = "TabLineSel" },
+            title = "Recent stuff",
+            border = "rounded",
+            -- text = "hallo",
+            text = {
+              header = "Welcome",
+              sections = {
+                "recent_files",
+              },
+            },
+          }
+        end,
+      },
+      {
         icon = " ",
         key = "c",
         desc = "Config",
