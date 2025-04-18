@@ -7,9 +7,23 @@ return {
   opts = {
     dashboard = dashboard,
     input = { enabled = true },
-    notifier = {
-      -- style = "minimal",
-      -- padding = false,
+    styles = {
+      notification = {
+        -- border = "hpad",
+        border = {
+          "╭",
+          "─",
+          "╮",
+          "│",
+          "╯",
+          "─",
+          "└",
+          "│",
+        },
+        wo = {
+          wrap = true,
+        },
+      },
     },
   },
 }

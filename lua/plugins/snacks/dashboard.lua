@@ -26,7 +26,7 @@ return {
         title = { "Recent Files", hl = "SnacksDashboardDesc" },
         key = "r",
         indent = 2,
-        limit = 5,
+        limit = 3,
         action = ":lua Snacks.dashboard.pick('oldfiles')",
       },
       {
@@ -35,19 +35,19 @@ return {
         title = { "Projects", hl = "SnacksDashboardDesc" },
         key = "p",
         indent = 2,
-        limit = 5,
+        limit = 3,
         action = ":lua Snacks.dashboard.pick('projects')",
       },
-      {
-        section = "terminal",
-        icon = "󰊤 ",
-        title = { "GitHub Notifications", hl = "SnacksDashboardDesc" },
-        key = "G",
-        height = 3,
-        indent = 2,
-        cmd = "gh notify -sn 3; sleep 0.01",
-        action = function() vim.ui.open "https://github.com/notifications" end,
-      },
+      -- {
+      --   section = "terminal",
+      --   icon = "󰊤 ",
+      --   title = { "GitHub Notifications", hl = "SnacksDashboardDesc" },
+      --   key = "G",
+      --   height = 3,
+      --   indent = 2,
+      --   cmd = "gh notify -sn 3; sleep 0.01",
+      --   action = function() vim.ui.open "https://github.com/notifications" end,
+      -- },
       {
         icon = " ",
         title = { "Window test", hl = "SnacksDashboardDesc" },
@@ -80,6 +80,8 @@ return {
           }
         end,
       },
+      { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+      { icon = "󰫺 ", key = "M", desc = "Mason", action = ":Mason" },
       {
         icon = " ",
         key = "c",
