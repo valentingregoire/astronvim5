@@ -71,12 +71,6 @@ return {
             title = "Recent stuff",
             border = "rounded",
             -- text = "hallo",
-            text = {
-              header = "Welcome",
-              sections = {
-                "recent_files",
-              },
-            },
           }
         end,
       },

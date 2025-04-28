@@ -44,6 +44,7 @@ return {
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
       ltex = {
+        filetypes = { "markdown", "gitcommit" },
         settings = {
           ltex = {
             language = "en-US",
