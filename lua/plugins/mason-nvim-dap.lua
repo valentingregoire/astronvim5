@@ -19,40 +19,62 @@ return {
   "jay-babu/mason-nvim-dap.nvim",
   opts = {
     handlers = {
-      function(config)
-        config.automatic_installation = true
-        require("mason-nvim-dap").default_setup(config)
-      end,
       python = function(config)
-        config.adapters = {
+        local dap = require "dap"
+        dap.adapters.python = {
           type = "executable",
-          command = "python",
+          command = "${workspaceFolder}/.venv/bin/python",
           args = {
             "-m",
             "debugpy.adapter",
           },
         }
+
+        dap.configurations.python = {
+          {
+            type = "python",
+            request = "launch",
+            name = "  Debug (F5)",
+            program = "${file}",
+          },
+        }
         require("mason-nvim-dap").default_setup(config)
       end,
-      js = function(config)
-        config.adapters = {
-          -- type = "pwa-node",
-          -- request = "launch",
-          -- name = "Launch file",
-          -- program = "${file}",
-          -- cwd = "${workspaceFolder}",
-          type = "server",
-          host = "127.0.0.1",
-          -- port = "${port}",
-          port = 9229,
-          executable = {
-            command = "js-debug-adapter",
-            -- args = { "${port}" },
-            args = { "9229" },
-          },
-          require("mason-nvim-dap").default_setup(config),
-        }
-      end,
+      -- function(config)
+      --   config.automatic_installation = true
+      --   require("mason-nvim-dap").default_setup(config)
+      -- end,
+      -- python = function(config)
+      --   config.adapters = {
+      --     type = "executable",
+      --     command = "python",
+      --     args = {
+      --       "-m",
+      --       "debugpy.adapter",
+      --     },
+      --   }
+      --   require("mason-nvim-dap").default_setup(config)
+      -- end,
+      -- js = function(config)
+      --   config.adapters = {
+      --     -- type = "pwa-node",
+      --     -- request = "launch",
+      --     -- name = "Launch file",
+      --     -- program = "${file}",
+      --     -- cwd = "${workspaceFolder}",
+      --     type = "server",
+      --     host = "127.0.0.1",
+      --     -- port = "${port}",
+      --     port = 9229,
+      --     executable = {
+      --       command = "js-debug-adapter",
+      --       -- args = { "${port}" },
+      --       args = { "9229" },
+      --     },
+      --     require("mason-nvim-dap").default_setup(config),
+      --   }
+      -- end,
+
       -- js = function(config)
       --   config
       --   python = function(source_name)
