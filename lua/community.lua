@@ -10,6 +10,11 @@ return {
   { import = "astrocommunity.scrolling.nvim-scrollbar" },
   { import = "astrocommunity.diagnostics.tiny-inline-diagnostic-nvim" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
+  { import = "astrocommunity.recipes.picker-nvchad-theme" },
+  { import = "astrocommunity.recipes.disable-borders" },
+
+  -- ai
+  { import = "astrocommunity.recipes.ai" },
 
   -- language packs
   -- backend
@@ -36,6 +41,9 @@ return {
   -- markdown/latex
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
+
+  -- debugging
+  { import = "astrocommunity.debugging.persistent-breakpoints-nvim" },
 
   -- completion
   { import = "astrocommunity.completion.cmp-spell" },
