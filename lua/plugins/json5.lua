@@ -1,5 +1,5 @@
 return {
   "Joakker/lua-json5",
-  lazy = true,
+  lazy = false,
   build = "./install.sh",
 }

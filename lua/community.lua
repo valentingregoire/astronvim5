@@ -5,18 +5,26 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-
+  -- themes
+  { import = "astrocommunity.colorscheme.onedarkpro-nvim" },
+  { import = "astrocommunity.colorscheme.vscode-nvim" },
   -- ui
   { import = "astrocommunity.scrolling.nvim-scrollbar" },
   { import = "astrocommunity.diagnostics.tiny-inline-diagnostic-nvim" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
+  -- { import = "astrocommunity.pack.nvchad-ui" },
   { import = "astrocommunity.recipes.picker-nvchad-theme" },
+  { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
   { import = "astrocommunity.recipes.disable-borders" },
+  -- mappings
+  { import = "astrocommunity.recipes.picker-lsp-mappings" },
 
   -- ai
   { import = "astrocommunity.recipes.ai" },
 
   -- language packs
+  -- lsp
+  { import = "astrocommunity.recipes.astrolsp-auto-signature-help" },
   -- backend
   -- Python/toml
   { import = "astrocommunity.pack.python" },
@@ -43,8 +51,9 @@ return {
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
 
-  -- debugging
+  -- running/debugging
   { import = "astrocommunity.debugging.persistent-breakpoints-nvim" },
+  { import = "astrocommunity.recipes.vscode" },
 
   -- completion
   { import = "astrocommunity.completion.cmp-spell" },
