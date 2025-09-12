@@ -55,6 +55,14 @@ return {
   { import = "astrocommunity.debugging.persistent-breakpoints-nvim" },
   { import = "astrocommunity.recipes.vscode" },
 
+  -- unit testing
+  { import = "astrocommunity.test.neotest" },
+  { import = "astrocommunity.test.nvim-coverage" },
+
+  -- editing support
+  { import = "astrocommunity.editing-support.neogen" },
+  { import = "astrocommunity.editing-support.copilotchat-nvim" },
+
   -- completion
   { import = "astrocommunity.completion.cmp-spell" },
 }

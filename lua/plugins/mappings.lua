@@ -10,6 +10,10 @@ return {
           -- mappings seen under group name "Buffer"
           ["<C-`>"] = { "<C-^>", desc = "Last buffer" },
         },
+        v = {
+          [">"] = { ">gv", desc = "Indent" },
+          ["<"] = { "<gv", desc = "Dedent" },
+        },
       },
     },
   },
