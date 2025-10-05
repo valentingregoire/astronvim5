@@ -23,8 +23,6 @@ return {
   { import = "astrocommunity.recipes.ai" },
 
   -- language packs
-  -- lsp
-  { import = "astrocommunity.recipes.astrolsp-auto-signature-help" },
   -- backend
   -- Python/toml
   { import = "astrocommunity.pack.python" },
@@ -65,4 +63,7 @@ return {
 
   -- completion
   { import = "astrocommunity.completion.cmp-spell" },
+
+  -- vscode
+  { import = "astrocommunity.recipes.vscode" },
 }
