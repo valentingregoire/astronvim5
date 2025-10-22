@@ -19,6 +19,9 @@ return {
   -- mappings
   { import = "astrocommunity.recipes.picker-lsp-mappings" },
 
+  -- git
+  { import = "astrocommunity.git.diffview-nvim" },
+
   -- ai
   { import = "astrocommunity.recipes.ai" },
 
@@ -46,8 +49,8 @@ return {
   { import = "astrocommunity.pack.helm" },
   { import = "astrocommunity.pack.nginx" },
   -- markdown/latex
-  { import = "astrocommunity.pack.markdown" },
-  { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
+  -- { import = "astrocommunity.pack.markdown" },
+  -- { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
 
   -- running/debugging
   { import = "astrocommunity.debugging.persistent-breakpoints-nvim" },

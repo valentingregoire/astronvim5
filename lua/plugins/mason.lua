@@ -20,7 +20,7 @@ return {
         -- install debuggers
         "debugpy",
         "js-debug-adapter",
-        "firefox-debug-adapter",
+        -- "firefox-debug-adapter",
 
         -- install any other package
         "tree-sitter-cli",
