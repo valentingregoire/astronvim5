@@ -9,8 +9,8 @@ return {
           -- second key is the lefthand side of the map
           -- mappings seen under group name "Buffer"
           ["<C-`>"] = { "<C-^>", desc = "Last buffer" },
-          ["<C-S-j"] = { ":bPrevious<CR>", desc = "Previous buffer" },
-          ["<C-S-k"] = { ":bNext<CR>", desc = "Next buffer" },
+          ["<A-S-j>"] = { "<cmd>bnext<cr>", desc = "Next buffer" },
+          ["<A-S-k>"] = { "<cmd>bprevious<cr>", desc = "Previous buffer" },
         },
         v = {
           [">"] = { ">gv", desc = "Indent" },
