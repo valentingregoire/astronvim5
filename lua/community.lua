@@ -14,10 +14,14 @@ return {
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   -- { import = "astrocommunity.pack.nvchad-ui" },
   { import = "astrocommunity.recipes.picker-nvchad-theme" },
-  { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
+  -- { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
+  -- { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
   { import = "astrocommunity.recipes.disable-borders" },
   -- mappings
   { import = "astrocommunity.recipes.picker-lsp-mappings" },
+
+  -- tools
+  { import = "astrocommunity.note-taking.global-note-nvim" },
 
   -- git
   { import = "astrocommunity.git.diffview-nvim" },
