@@ -81,28 +81,6 @@ return {
             color = function() return { main = status.hl.mode_bg(), right = "sep" } end,
           },
         },
-        -- we want an empty space here so we can use the component builder to make a new section with just an empty string
-        -- status.component.builder {
-        --   provider = "",
-        --   -- define the surrounding separator and colors to be used inside of the component
-        --   -- and the color to the right of the separated out section
-        --   surround = {
-        --     separator = "left",
-        --     color = { main = "sep", right = "file_info_bg" },
-        --   },
-        -- },
-        -- define a simple component where the provider is just a folder icon
-        -- status.component.builder {
-        --   -- astronvim.get_icon gets the user interface icon for a closed folder with a space after it
-        --   { provider = require("astroui").get_icon "FolderClosed" },
-        --   -- add padding after icon
-        --   padding = { left = 1, right = 1 },
-        --   -- set the foreground color to be used for the icon
-        --   -- hl = { fg = "bg" },
-        --   -- use the right separator and define the background color
-        --   surround = { separator = "left" },
-        --   color = { main = "folder_icon_bg", right = "file_info_bg" },
-        -- },
         -- separator
         status.component.builder {
           provider = "",
@@ -125,48 +103,18 @@ return {
           -- function to get the current working directory name
           filename = {
             fname = function(nr) return vim.fn.getcwd(nr) end,
-            padding = { left = 1, right = 1 },
+            padding = { right = 1 },
           },
           -- disable all other elements of the file_info component
           filetype = false,
           file_icon = false,
           file_modified = false,
           file_read_only = false,
-          -- use no separator for this part but define a background color
-          -- surround = {
-          --   separator = "none",
-          --   color = "file_info_bg",
-          --   condition = false,
-          -- },
           surround = {
             separator = "left",
             color = { main = "file_info_bg", right = "bg" },
           },
         },
-        -- separator
-        -- status.component.builder {
-        --   provider = "",
-        --   surround = {
-        --     separator = "left",
-        --     color = { main = "sep", right = "bg" },
-        --   },
-        -- },
-        -- add a section for the currently opened file information
-        -- status.component.file_info {
-        --   -- enable the file_icon and disable the highlighting based on filetype
-        --   filename = { fallback = "Empty" },
-        --   -- disable some of the info
-        --   filetype = false,
-        --   file_read_only = false,
-        --   -- add padding
-        --   padding = { right = 1 },
-        --   -- define the section separator
-        --   surround = {
-        --     separator = "left",
-        --     color = { main = "file_info_bg", right = "bg" },
-        --     condition = false,
-        --   },
-        -- },
         -- add a component for the current git branch if it exists and use no separator for the sections
         status.component.git_branch {
           git_branch = { padding = { left = 1, right = 1 } },
