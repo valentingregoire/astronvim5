@@ -11,6 +11,7 @@ return {
         GitAdd = "",
         GitChange = "",
         GitDelete = "",
+        StatusFileIcon = " ",
       },
       -- modify variables used by heirline but not defined in the setup call directly
       status = {
@@ -26,24 +27,23 @@ return {
           local normal_hl = get_hlgroup "Normal"
           local normal_bg = normal_hl.bg
           local normal_fg = normal_hl.fg
+          local left_bg = "bg"
+          local left_fg = "fg"
           -- use helper function to get highlight group properties
-          -- local comment_fg = get_hlgroup("Comment").fg
-          -- hl.git_branch_fg = comment_fg
-          -- hl.git_added = comment_fg
-          -- hl.git_changed = comment_fg
-          -- hl.git_removed = comment_fg
-          -- hl.sep = get_hlgroup("LspReferenceText").bg
           hl.git_branch_fg = normal_fg
           hl.git_added = normal_fg
           hl.git_changed = normal_fg
           hl.git_removed = normal_fg
           hl.blank_bg = get_hlgroup("Folded").fg
-          hl.file_info_bg = get_hlgroup("Visual").bg
+          hl.file_info_bg = normal_bg
+          hl.file_info_fg = normal_fg
           hl.nav_icon_bg = get_hlgroup("String").fg
           hl.nav_fg = hl.nav_icon_bg
           hl.folder_icon_bg = get_hlgroup("Error").fg
           hl.normal_bg = normal_bg
           hl.normal_fg = normal_fg
+          hl.left_bg = left_bg
+          hl.left_fg = left_fg
           hl.sep = normal_bg
           return hl
         end,
@@ -62,6 +62,8 @@ return {
     "rebelot/heirline.nvim",
     opts = function(_, opts)
       local status = require "astroui.status"
+      local color_left = { left = "bg", main = "bg", right = "sep" }
+      local color_sep = { left = "normal_bg", main = "sep", right = "bg" }
       opts.statusline = {
         -- default highlight for the entire statusline
         hl = { fg = "normal_fg", bg = "normal_bg" },
@@ -86,24 +88,17 @@ return {
           provider = "",
           surround = {
             separator = "left",
-            color = { main = "sep", right = "file_info_bg" },
-          },
-        },
-        -- folder icon
-        status.component.builder {
-          provider = " ",
-          surround = {
-            separator = "left",
-            color = { main = "file_info_bg", right = "file_info_bg" },
+            color = color_sep,
           },
         },
         -- add a file information component and only show the current working directory name
         status.component.file_info {
           -- we only want filename to be used and we can change the fname
           -- function to get the current working directory name
+          padding = { left = 1, right = 1 },
           filename = {
-            fname = function(nr) return vim.fn.getcwd(nr) end,
-            padding = { right = 1 },
+            fname = function(bufNr) return vim.fn.getcwd(bufNr) end,
+            icon = { kind = "StatusFileIcon" },
           },
           -- disable all other elements of the file_info component
           filetype = false,
@@ -112,7 +107,15 @@ return {
           file_read_only = false,
           surround = {
             separator = "left",
-            color = { main = "file_info_bg", right = "bg" },
+            color = color_left,
+          },
+        },
+        -- separator
+        status.component.builder {
+          provider = "",
+          surround = {
+            separator = "left",
+            color = { left = color_left.main, main = "sep", right = color_left.main },
           },
         },
         -- add a component for the current git branch if it exists and use no separator for the sections
