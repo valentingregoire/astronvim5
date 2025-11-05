@@ -69,7 +69,7 @@ return {
   { import = "astrocommunity.editing-support.copilotchat-nvim" },
 
   -- completion
-  { import = "astrocommunity.completion.cmp-spell" },
+  -- { import = "astrocommunity.completion.cmp-spell" },
 
   -- vscode
   { import = "astrocommunity.recipes.vscode" },

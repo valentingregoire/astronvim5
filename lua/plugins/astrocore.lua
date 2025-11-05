@@ -7,6 +7,7 @@ return {
   "AstroNvim/astrocore",
   ---@type AstroCoreOpts
   opts = {
+    spellfile = vim.fn.stdpath "config" .. "/spell/en.utf-8.add",
     -- autocmds = {
     -- LspProgress = {
     --
@@ -62,14 +63,16 @@ return {
   },
   -- vim options can be configured here
   options = {
-    opt = { -- vim.opt.<key>
-      relativenumber = true, -- sets vim.opt.relativenumber
-      number = true, -- sets vim.opt.number
-      spell = false, -- sets vim.opt.spell
-      spelloptions = "noplainbuffer,camel",
-      signcolumn = "yes", -- sets vim.opt.signcolumn to yes
-      wrap = true, -- sets vim.opt.wrap
-    },
+    -- FIXME: options are not getting picked up!
+    -- opt = { -- vim.opt.<key>
+    --   relativenumber = true, -- sets vim.opt.relativenumber
+    --   number = true, -- sets vim.opt.number
+    --   spell = false, -- sets vim.opt.spell
+    --   spellfile = vim.fn.stdpath "config" .. "/spell/en.utf-8.add",
+    --   spelloptions = "noplainbuffer,camel",
+    --   signcolumn = "yes", -- sets vim.opt.signcolumn to yes
+    --   wrap = true, -- sets vim.opt.wrap
+    -- },
     g = { -- vim.g.<key>
       -- configure global vim variables (vim.g)
       -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
