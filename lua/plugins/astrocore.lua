@@ -63,6 +63,7 @@ return {
   },
   -- vim options can be configured here
   options = {
+    -- opt = {},
     -- FIXME: options are not getting picked up!
     -- opt = { -- vim.opt.<key>
     --   relativenumber = true, -- sets vim.opt.relativenumber

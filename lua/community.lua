@@ -12,6 +12,8 @@ return {
   { import = "astrocommunity.scrolling.nvim-scrollbar" },
   { import = "astrocommunity.diagnostics.tiny-inline-diagnostic-nvim" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
+  -- { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
+  -- { import = "astrocommunity.recipes.heirline-clock-statusline" },
   -- { import = "astrocommunity.pack.nvchad-ui" },
   { import = "astrocommunity.recipes.picker-nvchad-theme" },
   -- { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
@@ -69,7 +71,7 @@ return {
   { import = "astrocommunity.editing-support.copilotchat-nvim" },
 
   -- completion
-  -- { import = "astrocommunity.completion.cmp-spell" },
+  { import = "astrocommunity.completion.cmp-spell" },
 
   -- vscode
   { import = "astrocommunity.recipes.vscode" },

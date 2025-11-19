@@ -56,10 +56,14 @@ return {
         },
       },
       typos_lsp = {
-        config = "~/typos.toml",
+        config = function() return vim.fn.stdpath "config" .. "/spell/typos.toml" end,
         init_options = {
-          config = "~/typos.toml",
+          config = function() return vim.fn.stdpath "config" .. "/spell/typos.toml" end,
         },
+        -- config = "~/typos.toml",
+        -- init_options = {
+        --   config = "~/typos.toml",
+        -- },
       },
     },
     -- customize how language servers are attached

@@ -19,27 +19,27 @@ return {
   "jay-babu/mason-nvim-dap.nvim",
   opts = {
     handlers = {
-      python = function(config)
-        local dap = require "dap"
-        dap.adapters.python = {
-          type = "executable",
-          command = "${workspaceFolder}/.venv/bin/python",
-          args = {
-            "-m",
-            "debugpy.adapter",
-          },
-        }
-
-        dap.configurations.python = {
-          {
-            type = "python",
-            request = "launch",
-            name = "  Debug (F5)",
-            program = "${file}",
-          },
-        }
-        -- require("mason-nvim-dap").default_setup(config)
-      end,
+      -- python = function(config)
+      --   local dap = require "dap"
+      --   dap.adapters.python = {
+      --     type = "executable",
+      --     command = "${workspaceFolder}/.venv/bin/python",
+      --     args = {
+      --       "-m",
+      --       "debugpy.adapter",
+      --     },
+      --   }
+      --
+      --   dap.configurations.python = {
+      --     {
+      --       type = "python",
+      --       request = "launch",
+      --       name = "  Debug (F5)",
+      --       program = "${file}",
+      --     },
+      --   }
+      --   -- require("mason-nvim-dap").default_setup(config)
+      -- end,
       js = function(config)
         local dap = require "dap"
         dap.adapters["pwa-node"] = {
