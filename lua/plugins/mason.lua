@@ -23,7 +23,7 @@ return {
         -- "firefox-debug-adapter",
 
         -- install any other package
-        "tree-sitter-cli",
+        -- "tree-sitter-cli",
       },
     },
   },
