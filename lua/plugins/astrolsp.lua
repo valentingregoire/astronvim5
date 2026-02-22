@@ -68,6 +68,15 @@ return {
       -- cspell = {
       --
       -- },
+      arduino_language_server = {
+        cmd = {
+          "arduino-language-server",
+          "-cli-config",
+          vim.fn.expand "~/.arduino15/arduino-cli.yaml",
+          "-fqbn",
+          "esp32:esp32:esp32",
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {

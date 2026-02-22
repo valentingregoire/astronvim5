@@ -2,3 +2,4 @@
 vim.opt.spell = true
 vim.opt.spelloptions = "noplainbuffer,camel"
 vim.opt.spellfile = vim.fn.stdpath "config" .. "/spell/en.utf-8.add"
+-- vim.lsp.semantic_tokens = false

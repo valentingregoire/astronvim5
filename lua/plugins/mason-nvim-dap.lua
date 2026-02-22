@@ -49,7 +49,7 @@ return {
           executable = {
             command = "node",
             args = {
-              "/home/valentin/.local/share/nvim_astro4/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
+              "/home/valentin/.local/share/nvim/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
               "${port}",
             },
           },

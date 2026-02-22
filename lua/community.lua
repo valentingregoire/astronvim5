@@ -35,7 +35,8 @@ return {
   -- backend
   -- Python/toml
   { import = "astrocommunity.pack.python" },
-  { import = "astrocommunity.pack.python-ruff" },
+  { import = "astrocommunity.pack.python.basedpyright" },
+  { import = "astrocommunity.pack.python.ruff" },
   -- lua
   { import = "astrocommunity.pack.lua" },
   -- frontend
@@ -53,7 +54,7 @@ return {
   -- DevOps
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.helm" },
-  { import = "astrocommunity.pack.nginx" },
+  -- { import = "astrocommunity.pack.nginx" },
   -- markdown/latex
   -- { import = "astrocommunity.pack.markdown" },
   -- { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
