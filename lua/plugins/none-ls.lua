@@ -1,12 +1,10 @@
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- Customize None-ls sources
 
 ---@type LazySpec
 return {
   "nvimtools/none-ls.nvim",
-  event = "VeryLazy",
-  -- dependencies = { "davidmh/cspell.nvim" },
   opts = function(_, opts)
     -- opts variable is the default configuration table for the setup function call
     -- local null_ls = require "null-ls"
@@ -17,16 +15,10 @@ return {
 
     -- Only insert new sources, do not replace the existing ones
     -- (If you wish to replace, use `opts.sources = {}` instead of the `list_insert_unique` function)
-
-    -- local cspell = require "cspell"
-    -- opts.sources = require("astrocore").list_insert_unique(
-    --   opts.sources,
-    --   {
-    --     cspell.diagnostics.with {
-    --       diagnostics_postprocess = function(diagnostic) diagnostic.severity = vim.diagnostic.severity.HINT end,
-    --     },
-    --     cspell.code_actions,
-    --   }
-    -- )
+    opts.sources = require("astrocore").list_insert_unique(opts.sources, {
+      -- Set a formatter
+      -- null_ls.builtins.formatting.stylua,
+      -- null_ls.builtins.formatting.prettier,
+    })
   end,
 }
