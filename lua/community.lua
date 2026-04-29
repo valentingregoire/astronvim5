@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCommunity: import any community modules here
 -- We import this file in `lazy_setup.lua` before the `plugins/` folder.
 -- This guarantees that the specs are processed before any user plugins.
@@ -7,6 +5,76 @@ if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
+  -- themes
+  { import = "astrocommunity.colorscheme.onedarkpro-nvim" },
+  { import = "astrocommunity.colorscheme.vscode-nvim" },
+  -- ui
+  { import = "astrocommunity.scrolling.nvim-scrollbar" },
+  { import = "astrocommunity.diagnostics.tiny-inline-diagnostic-nvim" },
+  { import = "astrocommunity.diagnostics.trouble-nvim" },
+  -- { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
+  -- { import = "astrocommunity.recipes.heirline-clock-statusline" },
+  -- { import = "astrocommunity.pack.nvchad-ui" },
+  { import = "astrocommunity.recipes.picker-nvchad-theme" },
+  -- { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
+  -- { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
+  { import = "astrocommunity.recipes.disable-borders" },
+  -- mappings
+  { import = "astrocommunity.recipes.picker-lsp-mappings" },
+
+  -- tools
+  { import = "astrocommunity.note-taking.global-note-nvim" },
+
+  -- git
+  { import = "astrocommunity.git.diffview-nvim" },
+
+  -- ai
+  { import = "astrocommunity.recipes.ai" },
+  -- { import = "astrocommunity.ai.copilotchat-nvim" },
+  { import = "astrocommunity.ai.sidekick-nvim" },
+
+  -- language packs
+  -- backend
+  -- Python/toml
+  { import = "astrocommunity.pack.python.base" },
+  -- { import = "astrocommunity.pack.python.basedpyright" },
+  { import = "astrocommunity.pack.python.ruff" },
+  -- lua
   { import = "astrocommunity.pack.lua" },
-  -- import/override with your plugins folder
+  -- frontend
+  { import = "astrocommunity.pack.eslint" },
+  { import = "astrocommunity.pack.html-css" },
+  { import = "astrocommunity.pack.json" },
+  -- { import = "astrocommunity.pack.typescript-all-in-one" },
+  { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.utility.lua-json5" },
+  -- yaml
+  { import = "astrocommunity.pack.yaml" },
+  { import = "astrocommunity.pack.just" },
+  -- csv
+  { import = "astrocommunity.programming-language-support.csv-vim" },
+  -- DevOps
+  { import = "astrocommunity.pack.docker" },
+  { import = "astrocommunity.pack.helm" },
+  -- { import = "astrocommunity.pack.nginx" },
+  -- markdown/latex
+  -- { import = "astrocommunity.pack.markdown" },
+  -- { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
+
+  -- running/debugging
+  { import = "astrocommunity.debugging.persistent-breakpoints-nvim" },
+  { import = "astrocommunity.recipes.vscode" },
+
+  -- unit testing
+  { import = "astrocommunity.test.neotest" },
+  { import = "astrocommunity.test.nvim-coverage" },
+
+  -- editing support
+  { import = "astrocommunity.editing-support.neogen" },
+
+  -- completion
+  { import = "astrocommunity.completion.cmp-spell" },
+
+  -- vscode
+  { import = "astrocommunity.recipes.vscode" },
 }
