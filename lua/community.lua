@@ -11,7 +11,8 @@ return {
   -- ui
   { import = "astrocommunity.scrolling.nvim-scrollbar" },
   { import = "astrocommunity.diagnostics.tiny-inline-diagnostic-nvim" },
-  { import = "astrocommunity.diagnostics.trouble-nvim" },
+  -- { import = "astrocommunity.diagnostics.trouble-nvim" },
+  --
   -- { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
   -- { import = "astrocommunity.recipes.heirline-clock-statusline" },
   -- { import = "astrocommunity.pack.nvchad-ui" },
