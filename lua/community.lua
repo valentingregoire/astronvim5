@@ -33,6 +33,7 @@ return {
   { import = "astrocommunity.recipes.ai" },
   -- { import = "astrocommunity.ai.copilotchat-nvim" },
   { import = "astrocommunity.ai.sidekick-nvim" },
+  -- { import = "astrocommunity.ai.opencode-nvim" },
 
   -- language packs
   -- backend
@@ -59,7 +60,7 @@ return {
   { import = "astrocommunity.pack.helm" },
   -- { import = "astrocommunity.pack.nginx" },
   -- markdown/latex
-  -- { import = "astrocommunity.pack.markdown" },
+  { import = "astrocommunity.pack.markdown" },
   -- { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
 
   -- running/debugging
