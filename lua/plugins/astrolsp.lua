@@ -40,6 +40,7 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
+      -- "swls",
     },
     -- customize language server configuration passed to `vim.lsp.config`
     -- client specific configuration can also go in `lsp/` in your configuration root (see `:h lsp-config`)
@@ -50,6 +51,11 @@ return {
           diagnosticMode = "workspace",
         },
       },
+      -- swls = {
+      --   cmd = { "/home/valentin/.local/bin/swls" },
+      --   filetypes = { "turtle" },
+      --   root_markers = { ".git" },
+      -- },
     },
     -- customize how language servers are attached
     handlers = {
