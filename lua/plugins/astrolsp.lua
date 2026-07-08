@@ -51,6 +51,15 @@ return {
           diagnosticMode = "workspace",
         },
       },
+      ruff = {
+        init_options = {
+          settings = {
+            lint = {
+              extendSelect = { "I" },
+            },
+          },
+        },
+      },
       -- swls = {
       --   cmd = { "/home/valentin/.local/bin/swls" },
       --   filetypes = { "turtle" },

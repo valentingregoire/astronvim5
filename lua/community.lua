@@ -40,7 +40,7 @@ return {
   -- Python/toml
   { import = "astrocommunity.pack.python.base" },
   -- { import = "astrocommunity.pack.python.basedpyright" },
-  { import = "astrocommunity.pack.python.ruff" },
+  -- { import = "astrocommunity.pack.python.ruff" },
   -- lua
   { import = "astrocommunity.pack.lua" },
   -- frontend
