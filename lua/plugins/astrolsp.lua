@@ -38,6 +38,7 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
+      -- "typos_lsp",
       -- "pyright"
       -- "swls",
     },
@@ -58,12 +59,58 @@ return {
             },
           },
         },
+        on_attach = function(client, bufnr)
+          -- Run ruff organizeImports + fixAll on save
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            callback = function()
+              vim.lsp.buf.code_action {
+                context = { only = { "source.organizeImports" }, diagnostics = {} },
+                apply = true,
+              }
+              vim.lsp.buf.code_action {
+                context = { only = { "source.fixAll" }, diagnostics = {} },
+                apply = true,
+              }
+            end,
+          })
+        end,
       },
       -- swls = {
       --   cmd = { "/home/valentin/.local/bin/swls" },
       --   filetypes = { "turtle" },
       --   root_markers = { ".git" },
       -- },
+      typos_lsp = {
+        init_options = {
+          config = vim.fn.expand(vim.fn.stdpath "config" .. "/spell/typos.toml"),
+        },
+        on_attach = function(client, bufnr)
+          vim.keymap.set("n", "zg", function()
+            local word = vim.fn.expand "<cword>"
+            if word == "" then return end
+
+            -- 1. Add to default dictionary
+            vim.cmd "normal! zg"
+
+            -- 2. Add to typos.toml
+            local toml_path = vim.fn.stdpath "config" .. "/spell/typos.toml"
+            local file = io.open(toml_path, "a")
+            if file then
+              file:write(string.format('\n%s = "%s"', word, word))
+              file:close()
+              vim.notify(string.format("'%s' added to typos.toml!", word), vim.log.levels.INFO)
+              -- Restart the LSP so the red underline disappears immediately
+              local clients = vim.lsp.get_clients { name = "typos_lsp", bufnr = bufnr }
+              for _, c in ipairs(clients) do
+                vim.cmd("lsp restart " .. c.id)
+              end
+            else
+              vim.notify("Error: Could not update typos.toml.", vim.log.levels.ERROR)
+            end
+          end, { buffer = bufnr, desc = "Add word to Neovim and Typos dictionary" })
+        end,
+      },
     },
     -- customize how language servers are attached
     handlers = {
