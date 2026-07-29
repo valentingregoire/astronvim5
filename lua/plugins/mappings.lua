@@ -12,6 +12,7 @@ return {
           ["<C-`>"] = { "<C-^>", desc = "Last buffer" },
           ["<A-S-j>"] = { "<cmd>bnext<cr>", desc = "Next buffer" },
           ["<A-S-k>"] = { "<cmd>bprevious<cr>", desc = "Previous buffer" },
+          ["<C-p>"] = { "<C-w>p", desc = "Previous window" },
 
           -- SnipRun
           [snip] = { desc = " Run" },

@@ -29,6 +29,8 @@ return {
         },
       },
       disabled = { -- disable formatting capabilities for the listed language servers
+        "basedpyright",
+        "ty",
         -- "codespell", -- not an LSP, done through mason-null-ls.lua
       },
       timeout_ms = 1000, -- default format timeout
@@ -64,10 +66,10 @@ return {
           vim.api.nvim_create_autocmd("BufWritePre", {
             buffer = bufnr,
             callback = function()
-              vim.lsp.buf.code_action {
-                context = { only = { "source.organizeImports" }, diagnostics = {} },
-                apply = true,
-              }
+              -- vim.lsp.buf.code_action {
+              --   context = { only = { "source.organizeImports" }, diagnostics = {} },
+              --   apply = true,
+              -- }
               vim.lsp.buf.code_action {
                 context = { only = { "source.fixAll" }, diagnostics = {} },
                 apply = true,
